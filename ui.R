@@ -6,16 +6,48 @@ library(httr)
 library(jsonlite)
 library(dplyr)
 
-ui <- fluidPage(
-  tags$head(
-    tags$html(lang = "en"),
-    tags$title("WEDC, Loughborough University: Illustrations and Graphics"),
-    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
-  ),
-  
-  tags$div(
-    HTML('<span class="wedc-title">WEDC, Loughborough University: Books and Manuals</span><br><br>')
-  ),
+ui <- tags$html(
+  lang = "en",
+  fluidPage(
+    style = "padding: 0px; margin: 0px;",
+    tags$head(
+      tags$title("WEDC: Illustrations and Graphics"),
+      tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
+    ),
+    
+    # Black banner
+    tags$div(
+      class = "black-banner",
+      tags$div(
+        class = "banner-content",
+        tags$a(
+          href = "https://www.lboro.ac.uk",
+          target = "_blank",
+          tags$img(src = "logo.png", class = "uni-logo", alt = "University Logo")
+        ),
+        tags$span("School of Architecture, Building and Civil Engineering")
+      )
+    ),
+    
+    # Blue banner
+    tags$div(
+      class = "blue-banner",
+      tags$div(
+        class = "banner-content",
+        tags$span("Water Engineering and Development Centre"),
+        tags$a(
+          href = "https://www.lboro.ac.uk/research/wedc/publications-and-resources/",
+          class = "return-link",
+          "< Return to Publications and resources"
+        )
+      )
+    ),
+    
+    # Title section
+    tags$div(
+      class = "white-banner",
+      tags$h1("Illustrations and Graphics")
+    ),
     
     # Sidebar layout
     sidebarLayout(
@@ -25,7 +57,8 @@ ui <- fluidPage(
         uiOutput("drawingTypeDropdown"),  # New dropdown for Drawing Type
         textInput("search_title", "Search Keyword", ""),  # Search box for titles
         p(),
-        p("These figures were prepared by WEDC, School of Architecture, Building and Civil Engineering, Loughborough University.")
+        p("The Water Engineering and Development Centre (WEDC) produces and disseminates quality, relevant and accessible knowledge products to meet the needs of academics, policymakers and practitioners working in various aspects of water engineering and development."),
+        p("Our books, manuals and other resources represent a substantial body of knowledge in water management, engineering and other international development-related subjects developed over 50 years.")
       ),
       mainPanel(
         withSpinner(
@@ -45,3 +78,4 @@ ui <- fluidPage(
                )
     )
   )
+)
