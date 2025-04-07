@@ -76,7 +76,7 @@ server <- function(input, output, session) {
         collection_choices <- c("All", collection_names)
         selectInput(
           inputId = "selected_collection",
-          label = "Select Collection",
+          label = "Select a Collection",
           choices = collection_choices,
           selected = "All"
         )

@@ -55,7 +55,7 @@ ui <- tags$html(
         style = "margin-left: 20px; padding-right: 20px;",
         uiOutput("collectionDropdown"),
         uiOutput("drawingTypeDropdown"),  # New dropdown for Drawing Type
-        textInput("search_title", "Search Keyword", ""),  # Search box for titles
+        textInput("search_title", "Search by Keyword", ""),  # Search box for titles
         p(),
         p("The Water Engineering and Development Centre (WEDC) produces and disseminates quality, relevant and accessible knowledge products to meet the needs of academics, policymakers and practitioners working in various aspects of water engineering and development."),
         p("Our books, manuals and other resources represent a substantial body of knowledge in water management, engineering and other international development-related subjects developed over 50 years.")
