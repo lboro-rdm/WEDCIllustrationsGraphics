@@ -52,7 +52,7 @@ ui <- tags$html(
     # Sidebar layout
     sidebarLayout(
       sidebarPanel(
-        style = "margin-bottom: 10px;",
+        style = "margin-left: 20px; padding-right: 20px;",
         uiOutput("collectionDropdown"),
         uiOutput("drawingTypeDropdown"),  # New dropdown for Drawing Type
         textInput("search_title", "Search Keyword", ""),  # Search box for titles
